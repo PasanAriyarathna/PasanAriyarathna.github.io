@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion"
-import portrait from "../assets/profile/pasan-cutout.png"
+import portrait from "../assets/profile/pasan-portrait.png"
 import { site } from "../data/site"
 
 const socials = [
@@ -18,34 +18,39 @@ export function Hero() {
         aria-hidden="true"
         style={{
           background:
-            "linear-gradient(180deg, #F4F7FB 0%, #D5DEEA 18%, #7E97B8 40%, #2C4C78 62%, #122844 82%, #091422 100%)",
+            "linear-gradient(180deg, #F7F9FC 0%, #E4EDF6 24%, #8EA6C2 52%, #1B3A64 76%, #091422 100%)",
         }}
       />
       <div
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute top-[30%] left-1/2 h-[78%] w-[min(94vw,680px)] -translate-x-1/2 rounded-t-[999px] border border-white/70"
         aria-hidden="true"
         style={{
           background:
-            "radial-gradient(ellipse 46% 38% at 50% 46%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 70%)",
+            "linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(213,222,234,0.28) 42%, rgba(16,35,63,0.05) 100%)",
         }}
       />
       <div
-        className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full opacity-70 blur-3xl"
+        className="pointer-events-none absolute top-[43%] left-1/2 h-[min(68vw,500px)] w-[min(68vw,500px)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#10233F]/15"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute top-[43%] left-1/2 h-[min(50vw,360px)] w-[min(50vw,360px)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/80"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[48%]"
+        aria-hidden="true"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(to bottom, rgba(255,255,255,0.2) 0px, rgba(255,255,255,0.2) 1px, transparent 1px, transparent 26px)",
+          maskImage: "linear-gradient(to bottom, transparent, #000 32%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent, #000 32%)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute -left-20 top-[16%] h-72 w-72 rounded-full opacity-80 blur-3xl"
         aria-hidden="true"
         style={{ background: "radial-gradient(circle, #FFFFFF 0%, rgba(255,255,255,0) 70%)" }}
-      />
-      <div
-        className="pointer-events-none absolute right-[-8%] bottom-[18%] h-72 w-72 rounded-full opacity-50 blur-3xl"
-        aria-hidden="true"
-        style={{ background: "radial-gradient(circle, #1A3A66 0%, rgba(26,58,102,0) 70%)" }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-40"
-        aria-hidden="true"
-        style={{
-          background:
-            "linear-gradient(118deg, transparent 36%, rgba(255,255,255,0.28) 48%, transparent 58%)",
-        }}
       />
 
       <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col px-5 pt-20 pb-24 sm:px-8">
@@ -65,18 +70,25 @@ export function Hero() {
         <motion.img
           src={portrait}
           alt="Portrait of Pasan Ariyarathna"
-          className="relative z-20 mx-auto mt-1 w-[min(88vw,500px)] max-h-[46vh] object-contain object-top sm:mt-2 sm:max-h-[52vh] lg:-mt-10 lg:max-h-[64vh]"
-          style={{ filter: "drop-shadow(0 22px 28px rgba(8, 18, 36, 0.38))" }}
+          className="relative z-20 mx-auto mt-2 h-[min(46vh,480px)] w-auto max-w-[min(84vw,390px)] object-contain object-bottom sm:mt-3 sm:h-[min(54vh,600px)] sm:max-w-[min(72vw,440px)] lg:h-[min(58vh,660px)] lg:max-w-[480px]"
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, #000 0%, #000 74%, transparent 100%), linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, #000 0%, #000 74%, transparent 100%), linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%)",
+            maskComposite: "intersect",
+            WebkitMaskComposite: "source-in",
+          }}
           initial={reduce ? false : { opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.05 }}
         />
 
-        <p className="pointer-events-none absolute top-[54%] right-[6%] z-30 hidden w-52 text-[0.95rem] leading-relaxed text-white md:block">
+        <p className="pointer-events-none absolute top-[58%] right-[7%] z-30 hidden w-52 text-[0.95rem] leading-relaxed text-white lg:block">
           Passionate about AI Engineering and Software Development.
         </p>
         <div className="absolute inset-x-5 bottom-5 z-30 flex flex-col gap-3 sm:inset-x-8 sm:bottom-7">
-          <p className="max-w-[15rem] text-sm leading-relaxed text-white sm:absolute sm:bottom-16 sm:left-0 sm:max-w-[11rem] md:hidden">
+          <p className="max-w-[15rem] text-sm leading-relaxed text-white sm:absolute sm:bottom-16 sm:left-0 sm:max-w-[11rem] lg:hidden">
             Passionate about AI Engineering and Software Development.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
